@@ -3,7 +3,7 @@
 
 # #### Week 5 - Deploy
 
-# In[1]:
+# In[ ]:
 
 
 # Import Library default with python installation
@@ -11,7 +11,7 @@ import os
 import sys
 
 
-# In[3]:
+# In[ ]:
 
 
 def my_main(input_filename):
@@ -233,7 +233,7 @@ def my_main(input_filename):
     return(totlinecount, totwordcount, totcharcount,output_list,"")
 
 
-# In[4]:
+# In[ ]:
 
 
 # # Main Program for Standalone App
@@ -260,7 +260,7 @@ def my_main(input_filename):
 
 # #### Week 4 - Flask
 
-# In[5]:
+# In[ ]:
 
 
 # Import libraries
@@ -270,14 +270,14 @@ from flask import render_template
 from flask import request
 
 
-# In[6]:
+# In[ ]:
 
 
 # Import werkzeug to run your app as a web application
 # from werkzeug.serving import run_simple
 
 
-# In[7]:
+# In[ ]:
 
 
 # Create input file folder
@@ -288,7 +288,7 @@ if not os.path.exists(upload_folder_path):
     os.mkdir(upload_folder_path)
 
 
-# In[8]:
+# In[ ]:
 
 
 # Instantiate the Flask object 
@@ -296,13 +296,13 @@ application = Flask(__name__)
 print('Flask object Instantiated')
 
 
-# In[9]:
+# In[ ]:
 
 
 application.config['UPLOAD_FOLDER'] = upload_folder_path
 
 
-# In[10]:
+# In[ ]:
 
 
 # home displays the selectform.html
@@ -312,7 +312,7 @@ def home():
 # end of function
 
 
-# In[11]:
+# In[ ]:
 
 
 # submit on the selectform.html will conduct the audit
@@ -331,7 +331,7 @@ def audit():
     if len(errstr):
         return render_template('selectform.html', errstr= errstr)
     else:
-        return render_template('template.html',
+        return render_template('result.html',
                             my_string=name,
                             line_count=tlc,
                             total_word_count = twc,
@@ -342,7 +342,7 @@ def audit():
 # end of function
 
 
-# In[12]:
+# In[ ]:
 
 
 # Main Program for Web App
